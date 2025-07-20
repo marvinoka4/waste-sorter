@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Waste Sorter</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Apply Inter font globally and ensure responsive images */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Remove extra space below image */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md flex flex-col items-center">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">AI Waste Sorter</h1>
+        <p class="text-gray-600 text-center mb-6">
+            Upload an image of a waste item, and our AI will attempt to identify its type for proper disposal.
+        </p>
+
+        <!-- Image Upload Section -->
+        <div class="mb-6 w-full">
+            <label for="imageUpload" class="block text-gray-700 text-sm font-semibold mb-2">
+                Upload Waste Image
+            </label>
+            <input type="file" id="imageUpload" accept="image/*" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+        </div>
+
+        <!-- Image Preview Area -->
+        <div id="imagePreviewContainer" class="mb-6 w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden border border-gray-300">
+            <p id="imagePreviewText" class="text-gray-500 text-sm">No image selected</p>
+            <img id="imagePreview" src="#" alt="Image Preview" class="hidden object-cover w-full h-full">
+        </div>
+
+        <!-- Analyse Button -->
+        <button id="analyseButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 w-full mb-6">
+            Analyse Waste
+        </button>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="hidden flex items-center justify-center mb-4 text-blue-600">
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Analysing...
+        </div>
+
+        <!-- Results Display Area -->
+        <div id="resultsDisplay" class="w-full p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-center font-semibold text-lg hidden">
+            <!-- Results will be displayed here with an icon -->
+        </div>
+
+        <!-- Error Message Area -->
+        <div id="errorDisplay" class="w-full p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 text-center font-semibold text-lg hidden mt-4">
+            <!-- Error messages will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
