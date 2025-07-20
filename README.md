@@ -10,7 +10,7 @@ It addresses the critical challenge of effective waste management, particularly 
 By providing an intuitive tool for waste identification, the project aims to simplify the 'work' of waste separation, fostering a culture of responsible waste management and contributing to environmental sustainability.
 
 ## Demo
-- **Video Demo**: [Link to your 3-minute video demo on YouTube/Vimeo/etc.]
+- **Video Demo**: [Link to video demo on YouTube, https://youtu.be/F2iXASZ_SZs]
 - **Live Demo**: [Link to your deployed Google Cloud Storage website, e.g., https://storage.googleapis.com/YOUR_BUCKET_NAME/index.html]
 
 ## Features
